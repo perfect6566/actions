@@ -6,7 +6,7 @@ name: Frank-auto-actions
 # events but only for the master branch
 on:
   schedule:
-  - cron: "1 * * * 1-5"
+  - cron: "1 * * * 1"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,7 +29,3 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: Run test.sh
-        run: |
-           /bin/bash actions/test.sh
-           go run goproject/check.go
