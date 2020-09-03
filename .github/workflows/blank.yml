@@ -5,6 +5,8 @@ name: Frank-auto-actions
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
+  push:
+    
   schedule:
   - cron: "1 * * * 1"
 
@@ -26,6 +28,9 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
+        env: 
+          Token: ${{ secrets.ACCESS_TOKEN }}
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          echo ${Token}
