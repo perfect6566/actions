@@ -13,6 +13,7 @@ func sayhelloGolang(w http.ResponseWriter, r *http.Request) {
     w.Write([]byte("Hello Golang"))
 }
 
+
 func sayhello(w http.ResponseWriter, r *http.Request) {
    r.ParseForm()  //解析参数，默认是不会解析的
    info:=&Info{}
@@ -36,5 +37,5 @@ http.HandleFunc("/hello", sayhello) //设置访问的路由
    if err != nil {
       log.Fatal("ListenAndServe: ", err)
    }
-
 }
+  
